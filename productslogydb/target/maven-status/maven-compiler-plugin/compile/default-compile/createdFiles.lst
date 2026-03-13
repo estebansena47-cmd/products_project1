@@ -1,0 +1,5 @@
+com\mycompany\productslogydb\registrador.class
+com\mycompany\productslogydb\recuperador.class
+com\mycompany\productslogydb\controlador.class
+com\mycompany\productslogydb\resources\JakartaEE10Resource.class
+com\mycompany\productslogydb\JakartaRestConfiguration.class

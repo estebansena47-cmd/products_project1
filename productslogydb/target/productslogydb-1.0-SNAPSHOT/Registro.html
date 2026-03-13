@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+      <link rel="stylesheet" href="CSS/css_database.css">
+    </head>
+    <body>
+       <div class="container">
+        <div class="subfondo">
+        
+
+<button type="button" class="buttback" id="buttback">
+  <img src="imgs/back.PNG"  alt="icono"
+  style="width: 20px; height: 20px;"> 
+</button>
+       <h2 class="titulo3">Registro de Nuevo Usuario</h2> <br>
+<form action="registrador" method="POST" id="formularioRegistro">
+
+   <label for="nombre" class="nombre1"> Nombre Y Apellido</label> 
+        <input type="text" class="nombre1_imput" id="nombreReg"  name="nombreAp" required><br>
+
+    <label for="numero" class="numero_r"> Número Telefónico</label> 
+       <input type="text" class="numero_imput_r" id="numeroReg" name="numeroT" required><br>
+
+    <label for="correo" class="correo_r">Correo Electrónico</label> 
+    <input type="text" class="correo_imput_r" id="correoReg" name="correoE" required><br>
+
+     <label for="usuario" class="usuario_r"> Nombre de Usuario</label> 
+        <input type="text" class="usuario_input_r" id="usuarioReg" name="usuarioReg" required><br>
+
+    <label for="contraseña" class="contraseña_r">Contraseña</label>  
+       <input type="password" class="contraseña_input_r" id="contraseñaReg" name="contraseñaReg" required><br>
+
+       <label for="contraseña_adm" class="contraseña_adm_r">Contraseña de la<br>cuenta principal</label>  
+       <input type="password" class="contraseña_adm_input_r" id="contraseña_admReg" name="contraseñaJefe" required>
+
+     <p class="parrafo2">
+        La cuenta principal corresponde a su jefe o la persona
+        encargada de administrar el sistema en donde usted trabaja
+     </p>
+      <button type="submit" class="boton3" id='boton3'>Enviar</button>
+
+</form>
+</div></div>
+
+ <script src="JS/guion.js"></script>
+    </body>
+</html>

@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+         <link rel="stylesheet" href="CSS/css_database.css">
+    </head>
+    <body>
+        <div class="container">
+        <div class="subfondo">
+        
+
+<button type="submit" class="buttback" id="buttback">
+  <img src="imgs/back.PNG"  alt="icono"
+  style="width: 20px; height: 20px;"> 
+</button>
+      <h2 class="titulo2">¿Has olvidado la Contraseña?</h2> 
+<form action="recuperador" method="POST" id="formularioRecuperacion">
+   <label for="usuario" class="usuario_recuperacion"> Usuario</label> 
+        <input type="text" class="usuario_recuperacion_input" id="usuarioRec" name="usuarioRecup">
+
+    <label for="correo_o_numero" class="correo_numero">Correo Electrónico o Número Telefónico</label> 
+    <input type="text" class="correo_o_numero_input" id="correo_o_numero" name="correoONumero">
+
+     <p class="parrafo1">
+        Recuerda que la información suministrada debe coincidir con la información de registro
+     </p>
+      <button type="submit" class="boton2" id='boton2'>Enviar</button> 
+
+</form>
+</div></div>
+<script src="JS/guion.js"></script>
+    </body>
+</html>
