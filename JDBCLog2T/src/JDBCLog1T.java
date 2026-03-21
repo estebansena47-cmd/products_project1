@@ -1,18 +1,16 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
-package jdbclog1t;
-
-/**
- *
- * @aut+hor ONE
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 import java.sql.*; 
 import java.util.logging.Level;
 import java.util.logging.Logger;
 public class JDBCLog1T {
 
+/**
+ *
+ * @author ONE
+ */ 
     /**
      * @param args the command line arguments
      */
@@ -29,13 +27,13 @@ public class JDBCLog1T {
             
             conexion = DriverManager.getConnection(url,usuario,contraseña);
             st = conexion.createStatement();
-            String eliminar= "Kevin";
-            String consulta= "Paula";
+            String eliminar= "GISELLE";
+            String consulta= "GISELLE";
             ResultSet checkRs = st.executeQuery("SELECT * FROM usuarios WHERE Nombre_Usuario = '" + consulta + "'");
             if (checkRs.next()) {
-            st.executeUpdate("UPDATE usuarios SET Correo_Electronico = 'PAU235@gmail.com' WHERE Nombre_Usuario ='" + consulta + "'"); 
+            st.executeUpdate("UPDATE usuarios SET Correo_Electronico = 'GISSELITA98@gmail.com235@gmail.com' WHERE Nombre_Usuario ='" + consulta + "'"); 
             } else {
-            st.executeUpdate("INSERT INTO usuarios (Nombre_Usuario, Contraseña, Numero_Telefonico, Correo_Electronico) VALUES ( '" + consulta + "' , 'PAU123', '3793563798', 'PAU23@gmail.com')");
+            st.executeUpdate("INSERT INTO usuarios (Nombre_Usuario, Contraseña, Numero_Telefonico, Correo_Electronico) VALUES ( '" + consulta + "' , 'GISS567', '3O76576846', 'GISELITA@gmail.com')");
            
             }
             st.executeUpdate("DELETE FROM usuarios WHERE Nombre_Usuario = '" + eliminar + "'");
