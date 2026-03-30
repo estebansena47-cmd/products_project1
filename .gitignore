@@ -1,6 +1,9 @@
 mysql-connector-java-8.0.27/
+lib/
 target/
 LinkRepositorio.txt
 /JDBCLog1T/JDBCLog1T/build/
 /JDBCLog2T/nbproject/private/
 /JDBCLog2T/build/
+/JDBCLog2T/dist/
+
