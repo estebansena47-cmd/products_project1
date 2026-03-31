@@ -17,5 +17,12 @@
         <property name="hibernate.hbm2ddl.auto">update</property>
         <property name="current_session_context_class">thread</property>
  <mapping class= "firstpack.Usuario"/>
+ <mapping class= "firstpack.Productos"/>
+ <mapping class= "firstpack.Proveedores"/>
+ <mapping class= "firstpack.Inventary"/>
+ <mapping class= "firstpack.Surtidos"/>
+ <mapping class= "firstpack.Ventas"/>
+ <mapping class= "firstpack.Vencimientos"/>
+ 
     </session-factory>
 </hibernate-configuration>
