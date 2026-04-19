@@ -6,4 +6,6 @@ LinkRepositorio.txt
 /JDBCLog2T/nbproject/private/
 /JDBCLog2T/build/
 /JDBCLog2T/dist/
-
+node_modules/
+.env
+**/.env
