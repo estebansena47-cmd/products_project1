@@ -2,7 +2,14 @@
   const express =require('express');
   const app = express();
   const mongoose = require('mongoose');
+  const bodyParser = require('body-parser');
+
+
   //endpoints
+  app.use(bodyParser.json());
+const postRuta= require('./routes/post');
+ app.use('/posts', postRuta);
+
   app.get('/',(req,res)=> { 
     res.send('prueba del servidor');
   });
@@ -12,5 +19,5 @@
   );
 const PORT = process.env.PORT || 3000;
 app.listen(PORT,()=>{
-    console.log('Servidor en http://localhost:${PORT}'); 
+    console.log(`Servidor en http://localhost:${PORT}`); 
 });
