@@ -9,6 +9,8 @@
   app.use(bodyParser.json());
 const postRuta= require('./routes/post');
  app.use('/posts', postRuta);
+const userRuta = require('./routes/user');
+app.use('/users',userRuta);
 
   app.get('/',(req,res)=> { 
     res.send('prueba del servidor');
