@@ -10,11 +10,16 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.annotation.WebServlet;
+import firstpack.HiberCrud;
+import java.io.PrintWriter;
 
 /**
  *
  * @author ONE
  */
+@WebServlet(name = "controlador", urlPatterns = {"/controlador"})
+
 public class controlador extends HttpServlet {
 
   
@@ -23,9 +28,25 @@ public class controlador extends HttpServlet {
 
          String info= request.getParameter("yuser");
          String clave= request.getParameter("ycontra");
-         request.setAttribute("mensajeParaJSP", info);
-         request.setAttribute("claveParaJSP", clave);
-         request.getRequestDispatcher("resultado.jsp").forward(request, response);   
+
+         System.out.println("Usuario recibido: " + info);
+   System.out.println("Clave recibida: " + clave);
+         HiberCrud crud= new HiberCrud();
+        boolean validado= crud.ValidarDatos(info, clave);
+            
+               response.setContentType("application/json");
+              PrintWriter out= response.getWriter();
+              if(validado){
+                  out.print("{\"mensaje\":\"Login Exitoso\"}");
+              } else{
+                  response.setStatus(401);
+                  out.print("{\"mensaje\":\"Error: Datos Incorrectos V3\"}");
+              }
+              out.flush();
+              return;
+         //request.setAttribute("mensajeParaJSP", info);
+         //request.setAttribute("claveParaJSP", clave);
+         //request.getRequestDispatcher("resultado.jsp").forward(request, response);   
 
     }
 

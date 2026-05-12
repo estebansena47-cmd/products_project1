@@ -19,7 +19,7 @@ function App() {
   return (
     <div className="container2">
          
-    <div class="subfondo_i1">
+     <div class="subfondo_transparente">
     <div class="headerinvency">
        <div class="invency_searcher">
        <img src={logo_lupa}  alt="img"  style={{width: '35px', height: '35px'}}/>

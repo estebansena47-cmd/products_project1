@@ -11,17 +11,48 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <jakartaee>10.0.0</jakartaee>
     </properties>
+   
+    <repositories>
+    <repository>
+        <id>project-local-repo</id>
+        <url>file://${project.basedir}/lib</url>
+    </repository>
     
-    <dependencies>
-        <dependency>
-            <groupId>jakarta.platform</groupId>
-            <artifactId>jakarta.jakartaee-api</artifactId>
-            <version>${jakartaee}</version>
-            <scope>provided</scope>
-        </dependency>
-    </dependencies>
-    
+</repositories>
+   <dependencies>
+    <dependency>
+    <groupId>com.local</groupId>
+    <artifactId>proyecto-ant</artifactId>
+    <version>1.01</version>
+</dependency>
+  <dependency>
+    <groupId>org.hibernate.orm</groupId>
+    <artifactId>hibernate-core</artifactId>
+    <version>6.0.2.Final</version>
+</dependency>
+
+<dependency>
+    <groupId>mysql</groupId>
+    <artifactId>mysql-connector-java</artifactId>
+    <version>8.0.27</version>
+</dependency>
+<dependency>
+    <groupId>jakarta.servlet</groupId>
+    <artifactId>jakarta.servlet-api</artifactId>
+    <version>6.0.0</version>
+    <scope>provided</scope>
+</dependency>
+
+<dependency>
+    <groupId>jakarta.platform</groupId>
+    <artifactId>jakarta.jakartaee-api</artifactId>
+    <version>10.0.0</version>
+    <scope>provided</scope>
+</dependency>
+</dependencies>
+
     <build>
+        <finalName>productslogydb</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

@@ -36,12 +36,12 @@ botonA.addEventListener('click',(e) => {
   const user= inputusuario.value;
  const contra= inputcontra.value; 
 
-if(user=== "beck" && contra==="there_egg") {
+//if(user=== "beck" && contra==="there_egg") {
   document.getElementById('miFormulario').submit();  
-}
+/*}
 else{
     alert("intenta de nuevo");
-       }
+       }*/
    });
 }
 

@@ -38,7 +38,7 @@ public Usuario (){
         this.Nombre_Usuario = Nombre_Usuario;
         this.Numero_Telefonico = Numero_Telefonico;
         this.Correo_Electronico = Correo_Electronico;
-        this.contrasena= Clave;
+        this.contrasena = Clave;
     }
 
     public int getCodigo() {
@@ -55,7 +55,7 @@ public Usuario (){
 
     @Override
     public String toString() {
-        return "Usuario{" + "codigo=" + codigo + ", Nombre_Usuario=" + Nombre_Usuario + ", Numero_Telefonico=" + Numero_Telefonico + ", Correo_Electronico=" + Correo_Electronico + ", Clave" + contrasena + '}';
+        return "Usuario{" + "codigo=" + codigo + ", Nombre_Usuario=" + Nombre_Usuario + ", Numero_Telefonico=" + Numero_Telefonico + ", Correo_Electronico=" + Correo_Electronico + ", Clave=" + contrasena + '}';
     }
 
     public void setNombre_Usuario(String Nombre_Usuario) {

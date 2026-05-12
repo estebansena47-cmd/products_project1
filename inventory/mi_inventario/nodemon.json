@@ -1,0 +1,3 @@
+{ "watch":["src/inventory.js"],
+"ignore":["node_modules/*","eslint.config.js"]
+}

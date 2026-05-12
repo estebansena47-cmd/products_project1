@@ -15,6 +15,7 @@ app.use('/users',userRuta);
   app.get('/',(req,res)=> { 
     res.send('prueba del servidor');
   });
+  //conexion del server
   mongoose.connect(process.env.MONGO_URI)
   .then(()=> console.log("Conexion Establecida"))
   .catch(err=> console.log("Conexion Fallida",err)

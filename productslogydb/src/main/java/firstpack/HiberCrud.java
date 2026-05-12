@@ -223,7 +223,7 @@ public class HiberCrud {
         venta.setPrecio_Menudeo(3300);
         venta.setPrecio_segun_cantidad(9900);
         venta.setPrecio_Total(9900);
-        venta.setFecha_Venta(LocalDate.of(2026,05,30));
+        venta.setFecha_Venta (LocalDate.of(2026,05,30));
         session.persist(venta);
 
         
