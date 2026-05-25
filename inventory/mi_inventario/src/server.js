@@ -25,6 +25,7 @@ app.get('/productos', (req, res) => {
     const query = `SELECT 
     p.Codigo_Barras, 
     p.Nombre_Producto,
+    p.Fecha_Vencimiento,
     SUM((i.Unidades_Por_Conjunto * IFNULL(i.Conjuntos, 0)) +
     IFNULL(i.Menudeo_Restante, 0)) AS stock
     FROM producto p
@@ -36,6 +37,7 @@ app.get('/productos', (req, res) => {
         res.json(results);
     });
 });
+
 //interfaz de detalles
 app.get('/productos/infoProduct/:codigo', (req, res) => {
     const codigo= req.params.codigo;
@@ -58,7 +60,26 @@ app.get('/productos/infoProduct/:codigo', (req, res) => {
         res.json(data);
     });
 });
+//detalles de la seccion de vencimientos
 
+    app.get('/productos/infoVencidos/:codigo', (req, res) => {
+        const codigo= req.params.codigo;
+        const cacharVencido=  `SELECT    
+    p.Nombre_Producto,
+    p.Codigo_Barras, 
+    p.lote,
+    p.Fecha_Vencimiento,
+    (i.Unidades_Por_Conjunto * IFNULL(i.Conjuntos, 0)) +
+    IFNULL(i.Menudeo_Restante, 0) AS stockXLote
+    
+    FROM producto p
+    JOIN inventario i ON p.Codigo_Barras= i.Codigo_Barras
+    WHERE p.Codigo_Barras= ?`;
+    db.query(cacharVencido,[codigo], (err, data) => {
+        if (err) return res.status(500).send(err);
+        res.json(data);
+    });
+});
 const PORT= 2000;
 
 app.listen(PORT, () => {

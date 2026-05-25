@@ -4,10 +4,10 @@ import logo_casa from "../../../productslogydb/src/main/webapp/imgs/casa_icon.pn
 import logo_lupa from "../../../productslogydb/src/main/webapp/imgs/Lupa.png"
 import {useEffect, useState} from "react";
 //import { RouterProviderProps } from 'react-router-dom';
-function Inventario({verDetalle}) {
+function Inventario({verDetalle,irInicio}) {
   
   const [productos, setProductos] = useState([]);
-    
+   const [busqueda, setBusqueda]= useState(""); 
    useEffect(()=>{
     fetch("http://localhost:2000/productos")
     .then((res) =>res.json())
@@ -18,22 +18,34 @@ function Inventario({verDetalle}) {
     //.then((data)=> setProductos(data))
     .catch((err)=>console.error("Error:", err));},[]);
   
-  
+  const productosFiltrados=productos.filter((prod)=>{
+    const digitado=busqueda.toLowerCase();
+    const nombre= prod.Nombre_Producto?
+    prod.Nombre_Producto.toLowerCase():"";
+    const codigo= prod.Codigo_Barras?
+    prod.Codigo_Barras.toString() : "";
+
+    return nombre.includes(digitado) || codigo.includes(digitado);
+
+  });
+
   return (
            
     <div className="subfondo_transparente">
     <div className="headerinvency">
        <div className="invency_searcher">
        <img src={logo_lupa}  alt="buscar"  style={{width: '35px', height: '35px'}}/>
-       <input type= "text" placeholder= "Buscar Producto" className='input_buscador'/>
+       <input type= "text" placeholder= "Buscar Producto" className='input_buscador'
+       value={busqueda} onChange={(e)=>setBusqueda(e.target.value)}/>
        </div>
-    <button type="submit" className="boton_inicio"> 
+    <button type="submit" className="boton_inicio" onClick={irInicio}> 
   <img src={logo_casa}  alt="inicio"  style={{width: '50px', height: '50px'}}/> 
 </button>
 </div>
+{productosFiltrados.length===0 && (<p style={{textAlign:'center',color: 'gray'}}> No se encontro el producto. </p>)}
       <table className= "inventory_table">
         <tbody> 
-          {productos.map((prod) => (
+          {productosFiltrados.map((prod) => (
             <tr key={prod.Codigo_Barras} 
             className={prod.stock > 0 ? 'disponible':' agotado'}>
               

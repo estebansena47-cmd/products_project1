@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Inventario from './Inventory';
 import Vencimientos from './Vencidos';
 import InfoProduct from './infoProduct';
+import InfoVencidos from './infoVencidos';
 import '../../../productslogydb/src/main/webapp/CSS/database_afterlog.css'
 import logo_ventas from "../../../productslogydb/src/main/webapp/imgs/1impro.png"
 import logo_inventory from "../../../productslogydb/src/main/webapp/imgs/2impro.png"
@@ -13,6 +14,9 @@ import campanita from "../../../productslogydb/src/main/webapp/imgs/1e.png"
 function App() {
   const [seccion, setSeccion] = useState('inicio');
   const [codigoelecto, setcodigoelecto] = useState(null);
+  const navegarHacia= nuevaSeccion => {setSeccion(nuevaSeccion);
+  setcodigoelecto(null);
+};
 const colorPulsado = (pulso)=>{
   if (seccion===pulso){
     return  '#658EE7';}
@@ -24,22 +28,22 @@ const colorPulsado = (pulso)=>{
       {/* BARRA LATERAL */}
       <aside className="menu_lateral">
         
-          <button type="button" className="boton_menu" onClick={() => setSeccion('ventas')} style={{backgroundColor: colorPulsado('ventas') }}>
+          <button type="button" className="boton_menu" onClick={() => navegarHacia('ventas')} style={{backgroundColor: colorPulsado('ventas') }}>
             <img src={logo_ventas} alt="icono_ventas" style={{ width: '120px', height: '90px' }} />
             <span>Ventas</span>
           </button>
 
-          <button type="button" className="boton_menu" onClick={() => setSeccion('inventario')} style={{backgroundColor: colorPulsado('inventario') }}>
+          <button type="button" className="boton_menu" onClick={() => navegarHacia('inventario')} style={{backgroundColor: colorPulsado('inventario') }}>
             <img src={logo_inventory} alt="icono_inventario" style={{ width: '90px', height: '90px' }} />
             <span>Inventario</span>
           </button>
 
-          <button type="button" className="boton_menu" onClick={() => setSeccion('vencimientos')} style={{backgroundColor: colorPulsado('vencimientos') }}>
+          <button type="button" className="boton_menu" onClick={() => navegarHacia('vencimientos')} style={{backgroundColor: colorPulsado('vencimientos') }}>
             <img src={logo_vencidos} alt="img" style={{ width: '60px', height: '60px' }} />
             <span>Vencimientos<br />Devoluciones</span>
           </button>
 
-          <button type="button" className="boton_menu"onClick={() => setSeccion('admin')}style={{backgroundColor: colorPulsado('admin') }}>
+          <button type="button" className="boton_menu"onClick={() => navegarHacia('admin')}style={{backgroundColor: colorPulsado('admin') }}>
             <img src={logo_admin} alt="img" style={{ width: '90px', height: '90px' }} />
             <span>Administración</span>
           </button> 
@@ -69,12 +73,19 @@ const colorPulsado = (pulso)=>{
 </aside>
 )}
         {seccion === 'inventario' && (
-          codigoelecto  === null ? (<Inventario verDetalle={(cod)=>setcodigoelecto(cod)}/>
+          codigoelecto  === null ? (<Inventario verDetalle={(cod)=>setcodigoelecto(cod)}
+          irInicio={()=>setSeccion('inicio')}/>
 
           ):( <InfoProduct codigo={codigoelecto}
           volver={()=> setcodigoelecto(null)} />
         )) }
-        {seccion === 'vencimientos' && <Vencimientos />}
+        {seccion === 'vencimientos' && (
+          codigoelecto  === null ? (<Vencimientos verDetalle={(cod)=>setcodigoelecto(cod)}
+          irInicio={()=>setSeccion('inicio')}/>
+
+          ):( <InfoVencidos codigo={codigoelecto}
+          volver={()=> setcodigoelecto(null)} />
+        )) }
         {seccion === 'ventas' && (
           <div style={{ color: 'black', padding: '20px' }}>
             <h2>Interfaz de Ventas</h2>

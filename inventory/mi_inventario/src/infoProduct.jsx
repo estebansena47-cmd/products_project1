@@ -3,7 +3,7 @@ import '../../../productslogydb/src/main/webapp/CSS/database_afterlog.css'
 import logo_x  from "../../../productslogydb/src/main/webapp/imgs/botonx.PNG"
 
 import {useEffect, useState} from "react";
-import { useParams } from 'react-router-dom';
+//import { useParams } from 'react-router-dom';
 
 function InfoProduct(props) {
   

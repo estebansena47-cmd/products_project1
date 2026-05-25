@@ -31,10 +31,30 @@ margin: 0px 0 0 30px !important;
     align-items: flex-start;
     text-align: left ;
 }
+.filaDetallesTabla{
+    color: black;
+    gap: 60px;
+    align-items: center;
+    text-align: center;
+}
+.headTabla{
+    align-items: center;
+    text-align: center; 
+    
+}
 .tituloProducto{
     display: flex;
     color: black;
     font-size: larger;
+    padding: 20px;
+    font-weight: bolder;
+    text-align: center !important;
+}
+.tituloProductos{
+    display: flex;
+    color: black;
+    font-size: larger;
+    padding: 0px 50px;
     font-weight: bolder;
     text-align: center !important;
 }
@@ -216,7 +236,11 @@ cursor: pointer;
     .expirado *{
         background-color:  #ff3131 !important;
         border: 2px solid black;   
-    }  
+    } 
+    .porExpirar *{
+        background-color:  green !important;
+        border: 2px solid black;   
+    } 
 .inventory_table{
     width: 100%;
      border-collapse: collapse;   
@@ -226,6 +250,10 @@ cursor: pointer;
    text-align: left;
    font-size: 20px;
    color: black;
+    
+}
+.vencimiento_table{
+    padding: 70px;
     
 }
 .boton_inicio{
