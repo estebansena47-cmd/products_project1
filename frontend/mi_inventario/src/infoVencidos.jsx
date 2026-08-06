@@ -34,7 +34,7 @@ obtenerDetalles();
 </div>
 <h2 className='tituloProductos'> {detalles[0].Nombre_Producto} </h2>
 
-      <table className= "vencimiento_table">
+      <table className= "vencido_y_venta_table">
         <thead className="headTabla" >
           
              <th style={{padding: '10px 30px'}}>Codigo de Barras</th>

@@ -39,7 +39,7 @@ app.get('/productos', (req, res) => {
     });
 });
 
-//interfaz de detalles
+//interfaz de detalles de inventario
 app.get('/productos/infoProduct/:codigo', (req, res) => {
     const codigo= req.params.codigo;
     const cachar=  `SELECT 
@@ -80,6 +80,7 @@ app.get('/productos/infoProduct/:codigo', (req, res) => {
         res.json(data);
     });
 });
+
 const PORT= 2000;
 
 app.listen(PORT, () => {

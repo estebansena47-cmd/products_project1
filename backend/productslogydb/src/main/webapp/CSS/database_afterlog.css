@@ -4,65 +4,55 @@
     box-sizing: border-box; 
 }
 
-body{
-padding: 10;
-justify-content: flex-start;
-font-family: sans-serif;
-background-color: #4DD7FA;
-box-sizing: border-box;
-overflow-x: hidden; 
+.agotado *{
+        background-color:  #FFEDC0 !important;
+        border: 2px solid black;   
+    }
+
+.boton_cerrar{
+    background: none;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    cursor: pointer;
+    transition: transform 0.1s ease; 
 }
 
-.menu_lateral{
-background-color: transparent;
+.boton_cerrar:active {
+    transform: scale(0.85); 
+}
+
+.boton_finalizar {
 display: flex;
-flex-direction: column;
+flex-direction:column;
 align-items: center;
-width: 250px;
-height: 100vh;
-gap: 20px;
-margin: 0px 0 0 30px !important;
-
+ background-color: white;
+  border-color: black; 
+  height: 130px;
+  width: 45%;
+  padding: 12px;
+  align-items: center;
+  border-radius: 30px;
+ padding: 5px;
+font-size: 22px;
+font-weight: bold;
+color: black;
+font-family:Georgia, 'Times New Roman', Times, serif ;
+cursor: pointer;
 }
 
-.filaDetalles{
-    color: black;
-    gap: 60px;
-    align-items: flex-start;
-    text-align: left ;
+.boton_inicio{
+    background: none !important;
+    border: none;
+    cursor: pointer;
+    font-size: 25px;
+    margin-left: auto;
+    transition: opacity 0.1s ease-in-out; 
 }
-.filaDetallesTabla{
-    color: black;
-    gap: 60px;
-    align-items: center;
-    text-align: center;
-}
-.headTabla{
-    align-items: center;
-    text-align: center; 
+
+.boton_inicio:active {
     
-}
-.tituloProducto{
-    display: flex;
-    color: black;
-    font-size: larger;
-    padding: 20px;
-    font-weight: bolder;
-    text-align: center !important;
-}
-.tituloProductos{
-    display: flex;
-    color: black;
-    font-size: larger;
-    padding: 0px 50px;
-    font-weight: bolder;
-    text-align: center !important;
-}
-button img{
-   align-self: center !important;
-   width: 60px;
-   height: auto; 
-   gap: -6px; 
+    opacity: 0.6;
 }
 
 .boton_menu {
@@ -83,7 +73,16 @@ color: white;
 font-family:Georgia, 'Times New Roman', Times, serif ;
 cursor: pointer;
 }
- 
+
+.boton_menu2{
+    display: flex; 
+    justify-content: right; 
+    gap: 8px;
+    padding:0px;
+    background: transparent;
+    border: none;
+    cursor: pointer;   
+}
 
 .container2{ 
     display: flex;
@@ -100,93 +99,93 @@ cursor: pointer;
     
 }
 
-.subfondo_i1{
-    background-color: #EBEBEB;
-    border: 2px solid black;
-    justify-content: center;
-    min-height: 80%;
-    width: 74%;
-    
-    padding: 30px 30px 15px 30px !important;
-    
-    margin-top: 10px !important;
-    margin-right: 0 !important;
+.detalles_vendiendo{
+     display: flex;
+     background-color: white;
+     border: 2px solid black;
+     align-items: flex-start;
+     justify-content: flex-start;
+     width: 100%;
+     height: 60%;
+     padding: 10px;
 }
-.subfondo_transparente{
-    
-        background-color: transparent;
-        border: transparent;
-        justify-content: center;
-        min-height: 100%;
-        min-width: 100%;
-        
-}
-.subfondo_i2{
-    background-color: white;
-    border: 2px solid black;
-    justify-content: center;
-    margin-top: 15px;
-    flex-grow: 1;
-    height: 100px;
-    width: 94%;
-    padding: 5px;
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
- padding: 15px;
- width: 100%;
-}
-    h1{
-    font-size: 66px;
-    font-family:Georgia, 'Times New Roman', Times, serif ;
-    color:#929292;
-    margin-left: 30px;
-}
-.subfondoDetalles{
-    display: flex; 
-    justify-content: flex-start;
-    flex-direction: column;
+
+.disponible *{
+        background-color: white !important;
+        border: 2px solid black;   
+    }
+
+.expirado *{
+        background-color:  #ff3131 !important;
+        border: 2px solid black;   
+    }
+
+.filaDetalles{
+    color: black;
+    gap: 60px;
     align-items: flex-start;
-    background-color: transparent;
-    width: 100%;
-    min-height: 100%;
-}
-.boton_cerrar{
-    background: none;
-    border: none;
-    outline: none;
-    box-shadow: none;
-    cursor: pointer;
-    transition: transform 0.1s ease; 
+    text-align: left ;
 }
 
-
-.boton_cerrar:active {
-    transform: scale(0.85); 
+.filaDetallesTabla{
+    color: black;
+    gap: 60px;
+    align-items: center;
+    text-align: center;
 }
+
 .grupo-iconos{
     display: flex;
     gap: 15px;
 
 }
-.boton_menu2{
-    display: flex; 
-    justify-content: right; 
-    gap: 8px;
-    padding:0px;
-    background: transparent;
-    border: none;
-    cursor: pointer;   
+
+.headTabla{
+    text-align: center; 
+    
 }
+
+.headerDetalles{
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-start;
+        background-color: transparent;
+        width: 100%;
+        height: 10%;
+        
+    }
+
 .headerinvency{
   display: flex;
   align-items: center;
- justify-content: flex-start !important;  
+ justify-content: flex-start !important; 
+ background: blue; 
  width: 100%;
  padding: 10px;
  gap: 5px;
 }
+
+.input_barsCode{
+         width: 40%; 
+    }
+
+.input_buscador{
+        display: flex;
+        justify-content: flex-start;
+        background-color: transparent;
+        border: none;
+        padding: 10px;
+        width: 95%;
+        font-size: larger;
+        color:black;
+        outline: none;
+
+    }
+
+.input_cantidad{
+       width: 10%; 
+    }
+
 .invency_searcher{
         
         background-color: white;
@@ -204,47 +203,13 @@ cursor: pointer;
         justify-content: space-between;
      padding: 15px;
      
-    } 
-    .input_buscador{
-        display: flex;
-        justify-content: flex-start;
-        background-color: transparent;
-        border: none;
-        padding: 10px;
-        width: 95%;
-        font-size: larger;
-        color:black;
-        outline: none;
+    }
 
-    }
-    .headerDetalles{
-        display: flex;
-        justify-content: flex-end;
-        align-items: flex-start;
-        background-color: transparent;
-        width: 100%;
-        height: 10%;
-    }
-    .disponible *{
-        background-color: white !important;
-        border: 2px solid black;   
-    } 
-    .agotado *{
-        background-color:  #FFEDC0 !important;
-        border: 2px solid black;   
-    }  
-    .expirado *{
-        background-color:  #ff3131 !important;
-        border: 2px solid black;   
-    } 
-    .porExpirar *{
-        background-color:  rgb(255, 255, 43) !important;
-        border: 2px solid black;   
-    } 
 .inventory_table{
     width: 100%;
      border-collapse: collapse;   
 }
+
 .inventory_table td{ 
    padding: 12px;
    text-align: left;
@@ -252,21 +217,127 @@ cursor: pointer;
    color: black;
     
 }
-.vencimiento_table{
-    padding: 70px;
-    
-}
-.boton_inicio{
-    background: none !important;
-    border: none;
-    cursor: pointer;
-    font-size: 25px;
-    margin-left: auto;
-    transition: opacity 0.1s ease-in-out; 
+
+.menu_lateral{
+background-color: transparent;
+display: flex;
+flex-direction: column;
+align-items: center;
+width: 250px;
+height: 100vh;
+gap: 20px;
+margin: 0px 0 0 30px !important;
+
 }
 
+.porExpirar *{
+        background-color:  rgb(255, 255, 43) !important;
+        border: 2px solid black;   
+    }
 
-.boton_inicio:active {
+.sellsHeaders{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    color: black;
+    gap: 50px; 
+    text-align: left;
+    width: 45%;
+    }
+
+.subfondoDetalles{
+    display: flex; 
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: purple;
+    width: 100%;
+    min-height: 100%;
+}
+
+.subfondo_i1{
+    background-color: #EBEBEB;
+    border: 2px solid black;
+    justify-content: center;
+    min-height: 80%;
+    width: 74%;
     
-    opacity: 0.6;
+    padding: 30px 30px 15px 30px !important;
+    
+    margin-top: 10px !important;
+    margin-right: 0 !important;
+}
+
+.subfondo_i2{
+    background-color: white;
+    border: 2px solid black;
+    justify-content: center;
+    margin-top: 15px;
+    flex-grow: 1;
+    height: 100px;
+    width: 94%;
+    padding: 5px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+ padding: 15px;
+ width: 100%;
+}
+
+.subfondo_transparente{
+    
+        background-color: transparent;
+        border: transparent;
+        justify-content: center;
+        min-height: 100%;
+        min-width: 100%;
+        
+}
+
+.tituloProducto{
+    display: flex;
+    color: black;
+    font-size: larger;
+    padding: 20px;
+    font-weight: bolder;
+    text-align: center !important;
+}
+
+.tituloProductos{
+    display: flex;
+    color: black;
+    font-size: larger;
+    padding: 0px 50px;
+    font-weight: bolder;
+    text-align: center !important;
+}
+
+.vencido_y_venta_table{
+    padding: 10px;
+    
+}
+
+body{
+padding: 10;
+justify-content: flex-start;
+font-family: sans-serif;
+background-color: #4DD7FA;
+box-sizing: border-box;
+overflow-x: hidden; 
+}
+
+button img{
+   align-self: center !important;
+   width: 60px;
+   height: auto; 
+   gap: -6px; 
+}
+
+h1{
+    font-size: 66px;
+    font-family:Georgia, 'Times New Roman', Times, serif ;
+    color:#929292;
+    margin-left: 30px;
 }

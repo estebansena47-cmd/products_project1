@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Inventario from './Inventory';
 import Vencimientos from './Vencidos';
+import Ventas from './Ventas';
 import InfoProduct from './infoProduct';
 import InfoVencidos from './infoVencidos';
 import '../../../backend/productslogydb/src/main/webapp/CSS/database_afterlog.css'
@@ -87,11 +88,9 @@ const colorPulsado = (pulso)=>{
           volver={()=> setcodigoelecto(null)} />
         )) }
         {seccion === 'ventas' && (
-          <div style={{ color: 'black', padding: '20px' }}>
-            <h2>Interfaz de Ventas</h2>
-            <p>Próximamente disponible...</p>
-            </div>
-            )}
+           (<Ventas verDetalle={(cod)=>setcodigoelecto(cod)}/>
+          ))}
+         
           {seccion === 'admin' && (
           <div style={{ color: 'black', padding: '20px' }}>
             <h2>Interfaz Administracion</h2>
